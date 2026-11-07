@@ -44,8 +44,8 @@ g2 <- gris(img2)
 
 # El objeto es mas oscuro que el fondo
 
-umbral1 <- 0.5  # Estos valores se deben ajustar para cada imagen
-umbral2 <- 0.5  # Estos valores se deben ajustar para cada imagen
+umbral1 <- 0.4  # Estos valores se deben ajustar para cada imagen
+umbral2 <- 0.4  # Estos valores se deben ajustar para cada imagen
 
 b1 <- g1 < umbral1 # Esto es para objeto obscuro, fondo claro
 b2 <- g2 < umbral2 # Si es objeto claro, fondo obscuro, se cambian a >
