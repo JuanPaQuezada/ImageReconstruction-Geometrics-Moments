@@ -2,7 +2,6 @@ library(jpeg)
 library(ggplot2)
 library(EBImage)
 library(gridExtra)
-img1<-readJPEG("/home/juanpa333/Documents/ImageReconstruction-Geometrics-Moments/data/raw/Experimento4_par1.jpg")
 #img1<-readJPEG(file.choose())
 matrix_gris<-function(image){
   #convert image to grayscale if it is not already
@@ -50,8 +49,4 @@ otsu_threshold<-function(image){
     cat("El umbral de Otsu normalizado es:", umbral_normalized, "\n")
     return(umbral_normalized)
 }
-matriz_gris<-matrix_gris(img1)
-img_gray<-imagen_gris(matriz_gris)
-otsu_threshold(img_gray)
-#mostrar imagen en escala de grises
 

@@ -17,11 +17,7 @@
 # ------------------------------------------------------------
 
 library(jpeg)
-
-# ------------------------------------------------------------
-# 1. LEER LAS IMAGENES
-# ------------------------------------------------------------
-
+source("./model/otsu_method.R")
 img1 <- readJPEG(file.choose())
 img2 <- readJPEG(file.choose())
 
@@ -43,9 +39,12 @@ g2 <- gris(img2)
 # ------------------------------------------------------------
 
 # El objeto es mas oscuro que el fondo
+matriz_gris<-matrix_gris(img1)
+img_gray<-imagen_gris(matriz_gris)
+umbral<-otsu_threshold(img_gray)
 
-umbral1 <- 0.4  # Estos valores se deben ajustar para cada imagen
-umbral2 <- 0.4  # Estos valores se deben ajustar para cada imagen
+umbral1 <- umbral  # Estos valores se deben ajustar para cada imagen
+umbral2 <- umbral  # Estos valores se deben ajustar para cada imagen
 
 b1 <- g1 < umbral1 # Esto es para objeto obscuro, fondo claro
 b2 <- g2 < umbral2 # Si es objeto claro, fondo obscuro, se cambian a >
